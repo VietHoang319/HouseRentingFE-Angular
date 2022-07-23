@@ -11,6 +11,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {JwtInterceptor} from "./helper/jwt-interceptor";
 import {ErrorInterceptor} from "./helper/error-interceptor";
 import { HomeComponent } from './component/pages/home/home.component';
+import { HouseCreateComponent } from './component/house/house-create/house-create.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HomeComponent } from './component/pages/home/home.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    HouseCreateComponent,
   ],
   imports: [
     BrowserModule,

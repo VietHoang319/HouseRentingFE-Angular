@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 
 const API_URL = environment.apiUrl + "/homes"
+
 @Injectable({
   providedIn: 'root'
 })
