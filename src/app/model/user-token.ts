@@ -5,6 +5,7 @@ export interface UserToken {
   username: string;
   password: string;
   confirmPassword: string;
+  phone: string;
   accessToken: string;
   enabled: boolean;
   roles: Role[]

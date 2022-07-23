@@ -1,16 +1,26 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {HomeComponent} from "./component/pages/home/home.component";
+import {LoginComponent} from "./component/pages/login/login.component";
+import {RegisterComponent} from "./component/pages/register/register.component";
 import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
-import {HouseListComponent} from "./component/house/house-list/house-list.component";
 
 const routes: Routes = [
   {
-    path: 'create',
-    component: HouseCreateComponent
+    path: "",
+    component: HomeComponent
   },
   {
-    path: '',
-    component: HouseListComponent
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
+  },
+  {
+    path: 'create',
+    component: HouseCreateComponent
   }
 ];
 
