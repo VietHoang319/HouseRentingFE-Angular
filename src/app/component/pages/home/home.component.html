@@ -15,6 +15,7 @@
         <div class="col-md-12 ">
           <div id="list-type" class="proerty-th">
             <div class="col-sm-6 col-md-3 p0" *ngFor="let house of houses">
+
               <div class="box-two proerty-item">
                 <div class="item-thumb">
                   <a href="property-1.html" ><img src="assets/assets/img/demo/property-3.jpg"></a>
@@ -30,9 +31,15 @@
                     <img src="assets/assets/img/icon/shawer.png"> {{house.bathroom}}
                   </div>
                 </div>
-
-
+                <ng-template [ngIf]="house.status == 0 || house.status == 2 " [ngIfElse]="elseBlock">
+                <button>Thue</button>
+                </ng-template>
+                <ng-template #elseBlock>
+                <div>abc</div>
+              </ng-template>
               </div>
+
+
             </div>
           </div>
         </div>
