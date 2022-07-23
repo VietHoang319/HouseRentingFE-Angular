@@ -24,6 +24,7 @@ export class HouseCreateComponent implements OnInit {
   house: any;
   listCategory: Category[] = []
 
+
   constructor(private houseService: HouseService,
               private categoryService: CategoryService,
               private router: Router) { }
@@ -47,7 +48,7 @@ export class HouseCreateComponent implements OnInit {
       description: this.houseForm.value.description,
       price: this.houseForm.value.price,
       owner: {
-        id: localStorage.getItem('id')
+        id: localStorage.getItem('ID')
       },
       status: this.houseForm.value.status
     }

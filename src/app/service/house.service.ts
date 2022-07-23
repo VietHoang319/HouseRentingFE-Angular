@@ -15,7 +15,7 @@ export class HouseService {
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<House[]> {
-    return this.httpClient.get<House[]>(API_URL + '/houses');
+    return this.httpClient.get<House[]>(API_URL + '/homes');
   }
 
   saveHouse(house: any): Observable<House> {
