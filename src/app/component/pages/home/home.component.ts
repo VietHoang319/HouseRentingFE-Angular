@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
 
   getAll() {
     this.homeService.getAll().subscribe(data => {
-      console.log(data.content)
-      this.houses = data.content
+      console.log(data)
+      this.houses = data
       for (let item of this.houses) {
         this.imageService.getFirstImageByHouse(item.id).subscribe(data => {
           this.images.push(data.image)
