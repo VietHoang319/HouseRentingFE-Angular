@@ -12,6 +12,7 @@ import {JwtInterceptor} from "./helper/jwt-interceptor";
 import {ErrorInterceptor} from "./helper/error-interceptor";
 import { HomeComponent } from './component/pages/home/home.component';
 import { HouseCreateComponent } from './component/house/house-create/house-create.component';
+import { ListHouseComponent } from './component/blocks/list-house/list-house.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HouseCreateComponent } from './component/house/house-create/house-creat
     RegisterComponent,
     HomeComponent,
     HouseCreateComponent,
+    ListHouseComponent,
   ],
   imports: [
     BrowserModule,

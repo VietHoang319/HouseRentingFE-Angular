@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from "../../../service/authentication.service";
 
 @Component({
@@ -6,15 +6,14 @@ import {AuthenticationService} from "../../../service/authentication.service";
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit, DoCheck {
+export class NavbarComponent implements OnInit {
   isLogin = false;
+  username: any
   constructor(private authenticationService : AuthenticationService) { }
 
   ngOnInit(): void {
-  }
-
-  ngDoCheck() {
     this.isLogin = localStorage.getItem("USERNAME") == null ? false : true;
+    this.username = localStorage.getItem("USERNAME")
   }
 
   logOut() {
