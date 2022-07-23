@@ -21,11 +21,12 @@ const routes: Routes = [
   {
     path: 'create',
     component: HouseCreateComponent
-  }
-];
+  }];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

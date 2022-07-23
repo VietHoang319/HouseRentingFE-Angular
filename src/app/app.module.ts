@@ -13,6 +13,7 @@ import {ErrorInterceptor} from "./helper/error-interceptor";
 import { HomeComponent } from './component/pages/home/home.component';
 import { HouseCreateComponent } from './component/house/house-create/house-create.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,6 @@ import { HouseCreateComponent } from './component/house/house-create/house-creat
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AppComponent,
     HouseCreateComponent,
   ],
   imports: [
