@@ -9,7 +9,7 @@ import {HttpClient} from "@angular/common/http";
 })
 
 export class DetailHouseComponent implements OnInit {
-  id: string = "1"
+  id: string = "5"
   obj: any = [];
 
 
