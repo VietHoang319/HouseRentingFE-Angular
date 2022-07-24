@@ -3,6 +3,8 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {HomeService} from "../../../service/home.service";
 import {House} from "../../../model/house";
 import {ActivatedRoute} from "@angular/router";
+import {Image} from "../../../model/image";
+import {ImageService} from "../../../service/image.service";
 
 @Component({
   selector: 'app-search',
@@ -11,6 +13,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SearchComponent implements OnInit {
   houses: House[] = []
+  images: Image[] = []
 
   address: string = ""
   start: number = 0
@@ -20,24 +23,49 @@ export class SearchComponent implements OnInit {
   cus_end: string = ""
   cus_begin: string = ""
 
-  constructor(private homeService : HomeService, private activatedRoute : ActivatedRoute) {
+  constructor(private homeService: HomeService, private activatedRoute: ActivatedRoute, private imageService : ImageService) {
   }
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(param => {
-      console.log(param)
-      this.address = param.address;
-      console.log(this.address)
+      if (param.hasOwnProperty("address")) {
+        this.address = param["address"]
+      }
+      if (param.hasOwnProperty("start")) {
+        this.start = +param["start"]
+      }
+      if (param.hasOwnProperty("end")) {
+        this.end = +param["end"]
+      }
+      if (param.hasOwnProperty("bathroom")) {
+        this.bathroom = +param["bathroom"]
+      }
+      if (param.hasOwnProperty("bedroom")) {
+        this.bedroom = +param["bedroom"]
+      }
+      if (param.hasOwnProperty("cus_begin")) {
+        this.cus_begin = param["cus_begin"]
+      }
+      if (param.hasOwnProperty("cus_end")) {
+        this.cus_end = param["cus_end"]
+      }
+      this.getData()
     })
   }
 
-
   getData() {
-    // this.homeService.search(<string>address, start, end, bathroom, bedroom, <string>cus_begin, <string>cus_end).subscribe(data => {
-    //   console.log(data)
-    //   this.houses = data
-    // }, error => {
-    //   console.log(error)
-    // })
+    this.homeService.search(this.address, this.start, this.end, this.bathroom, this.bedroom, this.cus_begin, this.cus_end).subscribe(data => {
+      console.log(data)
+      this.houses = data
+      for (let item of this.houses) {
+        this.imageService.getFirstImageByHouse(item.id).subscribe(data => {
+          this.images.push(data.image)
+        }, error => {
+          console.log(error)
+        })
+      }
+    }, error => {
+      console.log(error)
+    })
   }
 }
