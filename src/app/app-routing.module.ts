@@ -4,6 +4,7 @@ import {HomeComponent} from "./component/pages/home/home.component";
 import {LoginComponent} from "./component/pages/login/login.component";
 import {RegisterComponent} from "./component/pages/register/register.component";
 import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
+import {HouseEditComponent} from "./component/house/house-edit/house-edit.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent
+  },
+  {
+    path: "edit/:id",
+    component: HouseEditComponent
   },
   {
     path: 'create',

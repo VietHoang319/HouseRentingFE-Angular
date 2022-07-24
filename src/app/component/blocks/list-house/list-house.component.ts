@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {House} from "../../../model/house";
 import {Image} from "../../../model/image";
+import {ImageService} from "../../../service/image.service";
 
 @Component({
   selector: 'app-list-house',
@@ -14,7 +15,7 @@ export class ListHouseComponent implements OnInit {
   @Input()
   images: Image[] = []
 
-  constructor() { }
+  constructor(private imageService: ImageService ) { }
 
   ngOnInit(): void {
   }

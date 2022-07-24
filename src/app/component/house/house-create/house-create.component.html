@@ -25,6 +25,15 @@
           <input type='number' formControlName="bathroom" class="form-control" placeholder="GDP">
           <label>Description:</label>
           <input type="textarea" formControlName="description" class="form-control" placeholder="Description">
+            <label>Image: </label>
+            <input type="file"
+                   id="file"
+                   #userPhoto
+                   (change)="onFileSelected($event)"
+                   name="image"
+                   autocomplete="off"
+            />
+          <img src="{{fb}}" style="width: 100px;">
           <label>Price:</label>
           <input type="number" formControlName="price" class="form-control" placeholder="Description">
           <div class="modal-footer">

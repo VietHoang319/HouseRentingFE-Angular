@@ -13,6 +13,10 @@ import {ErrorInterceptor} from "./helper/error-interceptor";
 import { HomeComponent } from './component/pages/home/home.component';
 import { HouseCreateComponent } from './component/house/house-create/house-create.component';
 import { ListHouseComponent } from './component/blocks/list-house/list-house.component';
+import { HouseEditComponent } from './component/house/house-edit/house-edit.component';
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
 
 
 @NgModule({
@@ -24,12 +28,15 @@ import { ListHouseComponent } from './component/blocks/list-house/list-house.com
     HomeComponent,
     HouseCreateComponent,
     ListHouseComponent,
+    HouseEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

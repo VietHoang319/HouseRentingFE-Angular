@@ -22,7 +22,7 @@ export class HouseService {
     return this.httpClient.post<House>(API_URL + '/houses', house);
   }
 
-  findById(id: number): Observable<House> {
+  findById(id: any): Observable<House> {
     return this.httpClient.get<House>(API_URL + '/houses/' + id);
   }
 
