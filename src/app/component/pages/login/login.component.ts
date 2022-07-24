@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {AuthenticationService} from "../../../service/authentication.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {first} from "rxjs";
+import {AuthenticationService} from "../../../service/authentication.service";
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import {first} from "rxjs";
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     username: new FormControl(),
-    password: new FormControl()
+    password: new FormControl(),
   })
 
   constructor(private activatedRoute : ActivatedRoute, private router : Router,
@@ -26,12 +27,10 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('ACCESS_TOKEN', data.accessToken);
       localStorage.setItem('ROLE', data.roles[0].authority);
       localStorage.setItem('USERNAME', data.username);
-      // if (data.roles[0].authority == "ROLE_USER") {
-      //   this.router.navigate(['/user']);
-      // }
-      // else {
-      //   this.router.navigate(['/admin']);
-      // }
+      localStorage.setItem('ID', data.id);
+      if (data.roles[0].authority == "ROLE_USER") {
+        this.router.navigate(['']);
+      }
     }, error => {
       alert("Tài khoản của bạn bị sai")
     })

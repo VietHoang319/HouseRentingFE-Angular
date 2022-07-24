@@ -4,6 +4,7 @@ import {DetailHouseComponent} from "./component/detail-house/detail-house.compon
 import {HomeComponent} from "./service/home/home.component";
 import {LoginComponent} from "./component/pages/login/login.component";
 import {RegisterComponent} from "./component/pages/register/register.component";
+import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent
+  },
+  {
+    path: 'create',
+    component: HouseCreateComponent
   },
   {
     path: "detail",
