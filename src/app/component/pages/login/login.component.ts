@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {AuthenticationService} from "../../../service/authentication.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {first} from "rxjs";
+import {AuthenticationService} from "../../../service/authentication.service";
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import {first} from "rxjs";
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     username: new FormControl(),
-    password: new FormControl()
+    password: new FormControl(),
   })
 
   constructor(private activatedRoute : ActivatedRoute, private router : Router,
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['']);
       }
     }, error => {
-      console.log(error)
+      alert("Tài khoản của bạn bị sai")
     })
   }
 }
