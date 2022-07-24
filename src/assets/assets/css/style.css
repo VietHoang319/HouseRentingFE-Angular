@@ -2687,8 +2687,8 @@ padding-bottom: 15px;
     width: auto;
 }
 .error-page .error-title{
-    font-size: 11em;
-    color: #FDC600;
+    /*font-size: 11em;*/
+    color: rgba(255, 0, 0, 0.71);
 }
 
 .fqa-title::before {

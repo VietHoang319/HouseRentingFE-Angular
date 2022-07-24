@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse yamm" id="navigation">
       <div class="button navbar-right" *ngIf="!isLogin">
         <button class="navbar-btn nav-button wow bounceInRight login" routerLink="/login" data-wow-delay="0.4s">Đăng nhập</button>
-        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">Đăng ký</button>
+        <button class="navbar-btn nav-button wow bounceInRight login" routerLink="/register" data-wow-delay="0.4s">Đăng ký</button>
       </div>
       <ul class="main-nav nav navbar-nav navbar-right">
         <li class="dropdown yamm-fw" data-wow-delay="0.1s" *ngIf="isLogin">

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['']);
       }
     }, error => {
-      alert("Tài khoản của bạn bị sai")
+      console.log(error)
     })
   }
 }
