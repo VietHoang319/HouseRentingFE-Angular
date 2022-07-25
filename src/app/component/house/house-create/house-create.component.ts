@@ -4,8 +4,6 @@ import {Category} from "../../../model/category";
 import {HouseService} from "../../../service/house.service";
 import {CategoryService} from "../../../service/category.service";
 import {Router} from "@angular/router";
-import {finalize} from "rxjs";
-import {AngularFireStorage} from "@angular/fire/compat/storage";
 
 @Component({
   selector: 'app-house-create',
@@ -30,7 +28,7 @@ export class HouseCreateComponent implements OnInit {
   constructor(private houseService: HouseService,
               private categoryService: CategoryService,
               private router: Router,
-              private storage: AngularFireStorage) { }
+              ) { }
 
   ngOnInit(): void {
     this.categoryService.getAll().subscribe((data) => {
@@ -68,34 +66,5 @@ export class HouseCreateComponent implements OnInit {
       console.log(error)
     })
   }
-  title = "cloudsSorage";
-  selectedFile: any;
-  fb: any;
-  downloadURL: any;
 
-  onFileSelected(event: any) {
-    var n = Date.now();
-    const file = event.target.files[0];
-    const filePath = `RoomsImages/${n}`;
-    const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(`RoomsImages/${n}`, file);
-    task
-      .snapshotChanges()
-      .pipe(
-        finalize(() => {
-          this.downloadURL = fileRef.getDownloadURL();
-          this.downloadURL.subscribe((url: any) => {
-            if (url) {
-              this.fb = url;
-            }
-            console.log(this.fb);
-          });
-        })
-      )
-      .subscribe(url => {
-        if (url) {
-          console.log('url', url);
-        }
-      });
-  }
 }

@@ -15,4 +15,7 @@ export class ImageService {
   getFirstImageByHouse(id: any) : Observable<any> {
     return this.httpClient.get(API_URL + `/${id}`)
   }
+  save(image: any): Observable<any> {
+    return this.httpClient.post(API_URL, image);
+  };
 }

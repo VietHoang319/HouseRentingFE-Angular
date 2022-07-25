@@ -17,6 +17,7 @@ import { HouseEditComponent } from './component/house/house-edit/house-edit.comp
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
+import { ImageCreateComponent } from './component/image/image-create/image-create.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {environment} from "../environments/environment";
     HouseCreateComponent,
     ListHouseComponent,
     HouseEditComponent,
+    ImageCreateComponent,
   ],
   imports: [
     BrowserModule,
