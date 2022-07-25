@@ -5,6 +5,7 @@ import {HomeComponent} from "./service/home/home.component";
 import {LoginComponent} from "./component/pages/login/login.component";
 import {RegisterComponent} from "./component/pages/register/register.component";
 import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
+import {SearchComponent} from "./component/pages/search/search.component";
 
 const routes: Routes = [
   {
@@ -26,7 +27,12 @@ const routes: Routes = [
   {
     path: "detail",
     component:DetailHouseComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent,
   }];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

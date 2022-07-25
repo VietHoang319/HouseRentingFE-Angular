@@ -1,0 +1,69 @@
+<div class="home-lager-shearch">
+  <div class="container">
+    <div class="col-md-12 large-search">
+      <div class="search-form wow pulse">
+        <form action="" class=" form-inline" [formGroup]="searchForm" (ngSubmit)="getSearchForm()">
+          <div class="col-md-12 clear">
+            <div class="col-md-12">
+              <input type="text" class="form-control" placeholder="Nhập đia chỉ cần tìm" formControlName="address">
+            </div>
+          </div>
+
+          <div class="col-md-12 clear">
+            <div class="search-row">
+
+              <div class="col-sm-4">
+                <label for="price-range">Giá cần tìm ($):</label>
+                <input type="text" class="span2" data-slider-min="0"
+                       data-slider-max="100000" data-slider-step="5"
+                       data-slider-value="[0,100000]" id="price-range" formControlName="price"><br/>
+                <b class="pull-left color">0$</b>
+                <b class="pull-right color">100000$</b>
+              </div>
+              <!-- End of  -->
+
+              <!-- End of  -->
+
+              <div class="col-sm-4">
+                <label for="min-baths">Phòng tắm :</label>
+                <input type="text" class="span2"value="1" data-slider-min="1"
+                       data-slider-max="3" data-slider-step="1"
+                       data-slider-value="[1]" id="min-baths" formControlName="bathroom"><br/>
+                <b class="pull-left color">1</b>
+                <b class="pull-right color">3</b>
+              </div>
+              <!-- End of  -->
+
+              <div class="col-sm-4">
+                <label for="min-bed">Phòng ngủ :</label>
+                <input type="text" class="span2" value="1" data-slider-min="1"
+                       data-slider-max="10" data-slider-step="1"
+                       data-slider-value="1" id="min-bed" formControlName="bedroom"><br/>
+                <b class="pull-left color">1</b>
+                <b class="pull-right color">10</b>
+              </div>
+              <!-- End of  -->
+
+            </div>
+
+            <div class="search-row">
+              <span class="col-md-5">
+                <label for="cusBegin">Ngày đặt trước: </label>
+                <input id="cusBegin" type="date" class="form-control" placeholder="Nhập ngày đặt trước" formControlName="cus_begin">
+              </span>
+              <span class="col-md-2"></span>
+              <span class="col-md-5">
+                <label for="cusEnd">Ngày trả nhà: </label>
+                <input id="cusEnd" type="date" class="form-control" placeholder="Nhập ngày trả nhà" formControlName="cus_end">
+              </span>
+
+            </div>
+          </div>
+          <div class="center">
+            <input type="submit" value="" class="btn btn-default btn-lg-sheach">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
