@@ -14,6 +14,10 @@ export class OrderrService {
 
   constructor(private httpClient: HttpClient) { }
 
+  getAll(): Observable<Orderr> {
+    return this.httpClient.get<Orderr>(API_URL)
+  }
+
   rentHouse(order: Orderr): Observable<Orderr> {
     return  this.httpClient.post<Orderr>(API_URL, order)
   }

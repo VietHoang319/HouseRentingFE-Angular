@@ -18,6 +18,8 @@ import {SearchComponent} from "./component/pages/search/search.component";
 import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
 import { SliderComponent } from './component/blocks/slider/slider.component';
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
+import { HouseRentedComponent } from './component/house/house-rented/house-rented.component';
+import { ListBillComponent } from './component/bill/list-bill/list-bill.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import {RentHouseComponent} from "./component/house/rent-house/rent-house.compon
     SearchComponent,
     SliderComponent,
     RentHouseComponent,
+    HouseRentedComponent,
+    ListBillComponent,
   ],
   imports: [
     BrowserModule,

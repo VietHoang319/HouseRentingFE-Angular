@@ -9,11 +9,14 @@ import {AuthenticationService} from "../../../service/authentication.service";
 export class NavbarComponent implements OnInit {
   isLogin = false;
   username: any
+  id: any
+
   constructor(private authenticationService : AuthenticationService) { }
 
   ngOnInit(): void {
     this.isLogin = localStorage.getItem("USERNAME") == null ? false : true;
     this.username = localStorage.getItem("USERNAME")
+    this.id = localStorage.getItem("ID")
   }
 
   logOut() {

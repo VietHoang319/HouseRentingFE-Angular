@@ -30,7 +30,10 @@
                         <a href="index.html">Danh sách nhà đã đăng</a>
                       </li>
                       <li>
-                        <a href="index-2.html">Danh sách nhà đã thuê</a>
+                        <a [routerLink]="['/house-rented/id', id]">Danh sách nhà đã thuê</a>
+                      </li>
+                      <li>
+                        <a [routerLink]="['/show-bill']">Danh sách đơn thuê</a>
                       </li>
                       <li>
                         <a href="" (click)="logOut()">Đăng xuất</a>
@@ -39,11 +42,10 @@
                   </div>
                 </div>
               </div>
-              <!-- /.yamm-content -->
             </li>
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
