@@ -1,4 +1,4 @@
-<form [formGroup]="rentForm" (submit)="rent(house.id)">
+<form [formGroup]="rentForm" (submit)="rent(house.id, house.price)">
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -8,10 +8,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="hidden" formControlName="customer">
+        <label>Ngày bắt đầu thuê</label>
         <input type="date" formControlName="startTime">
+        <label>Ngày kết thúc thuê</label>
         <input type="date" formControlName="endTime">
-        <input type="number" formControlName="total">
+        <input type="hidden" formControlName="total">
         <input type="hidden" formControlName="status">
         <p>Bạn có chắc muốn thuê căn nhà này không?</p>
       </div>
