@@ -4,14 +4,16 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-9 pr-30 padding-top-40 properties-page user-properties">
+      <div class="col-md-12 pr-30 padding-top-40 properties-page user-properties">
 
         <div class="section">
           <div class="page-subheader sorting pl0 pr-10">
-
-
+            <ul class="sort-by-list pull-right">
+              <li class="active">
+                <button class="btn btn-default btn-login" routerLink="/register"> Thêm nhà bạn muốn cho thuê</button>
+              </li>
+            </ul><!--/ .sort-by-list-->
           </div>
-
         </div>
 
         <div class="section">
@@ -19,23 +21,16 @@
             <div class="col-md-4 p0" *ngFor="let house of houses; index as i">
               <div class="box-two proerty-item">
                 <div class="item-thumb">
-                  <a href="property-1.html"><img src="assets/assets/img/demo/property-3.jpg"></a>
+                  <a [routerLink]="['/detail', house.id]"><img src="{{images[i].image}}"></a>
                 </div>
                 <div class="item-entry overflow">
-                  <h5><a href="property-1.html"> {{house.name}} </a></h5>
+                  <h5><a [routerLink]="['/detail', house.id]"> {{house.name}} </a></h5>
                   <div class="dot-hr"></div>
                   <span class="proerty-price pull-right">{{house.price}}</span>
                   <p style="display: none;">{{house.description}}</p>
                   <div class="property-icon">
                     <img src="assets/assets/img/icon/bed.png">{{house.bedroom}}
                     <img src="assets/assets/img/icon/shawer.png">{{house.bathroom}}
-
-
-<!--                    <div class="dealer-action pull-right">-->
-<!--                      <a href="submit-property.html" class="button">Edit </a>-->
-<!--                      <a href="#" class="button delete_user_car">Delete</a>-->
-<!--                      <a href="property-1.html" class="button">View</a>-->
-<!--                    </div>-->
                   </div>
                 </div>
               </div>
