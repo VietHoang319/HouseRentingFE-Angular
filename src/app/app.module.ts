@@ -19,6 +19,9 @@ import { SearchComponent } from './component/pages/search/search.component';
 import { FooterComponent } from './component/blocks/footer/footer.component';
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
 import { MyhouseComponent } from './component/house/myhouse/myhouse.component';
+import { HouseRentedComponent } from './component/house/house-rented/house-rented.component';
+import { ListBillComponent } from './component/bill/list-bill/list-bill.component';
+import { DeleteBillComponent } from './component/bill/delete-bill/delete-bill.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { MyhouseComponent } from './component/house/myhouse/myhouse.component';
     RentHouseComponent,
     FooterComponent,
     MyhouseComponent,
+    HouseRentedComponent,
+    ListBillComponent,
+    DeleteBillComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,11 +19,7 @@ export class ListHouseComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('ID')) {
-      this.isUser = true;
-    } else {
-      this.isUser = false;
-    }
+
   }
 
 

@@ -11,7 +11,6 @@ import {HomeService} from "../../../service/home.service";
 })
 export class RentHouseComponent implements OnInit {
   rentForm: FormGroup = new FormGroup({
-    customer: new FormControl(),
     startTime: new FormControl(),
     endTime: new FormControl(),
     total: new FormControl(),
@@ -42,7 +41,7 @@ export class RentHouseComponent implements OnInit {
     })
   }
 
-  rent(id: any) {
+  rent(id: any, price: any) {
     this.order = {
       house: {
         id: id,
@@ -51,9 +50,9 @@ export class RentHouseComponent implements OnInit {
       customer: {
         id: localStorage.getItem("ID")
       },
-      startTime: this.rentForm.value.startTime,
-      endTime: this.rentForm.value.endTime,
-      total: this.rentForm.value.total,
+      startTime: new Date(this.rentForm.value.startTime),
+      endTime: new Date(this.rentForm.value.endTime),
+      total: price * this.period(Number(new Date(this.rentForm.value.startTime)), Number(new Date(this.rentForm.value.endTime))),
       status: 1
     }
     console.log(this.order)
@@ -66,5 +65,9 @@ export class RentHouseComponent implements OnInit {
     })
   }
 
+    period(startTime: number, endTime: number) {
+    const diffInMs = Math.abs(endTime - startTime);
+    return diffInMs / (1000 * 60 * 60 * 24);
+  }
 
 }

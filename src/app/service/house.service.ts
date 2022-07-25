@@ -22,7 +22,7 @@ export class HouseService {
     return this.httpClient.post<House>(API_URL + '/houses', house);
   }
 
-    findById(id: string | null): Observable<House> {
+  findById(id: any): Observable<House> {
     return this.httpClient.get<House>(API_URL + '/houses/' + id);
   }
 
@@ -30,8 +30,8 @@ export class HouseService {
     return this.httpClient.put<House>(API_URL + '/houses/' + id, house);
   }
 
-  deleteHouse(id: number): Observable<House> {
-    return this.httpClient.delete<House>(API_URL + '/houses/' + id);
+  findHouseRented(id: number): Observable<House> {
+    return this.httpClient.get<House>(API_URL + '/houses/find-house-rented?id=' + id)
   }
 
   findByOwnerId(id: number): Observable<House>{

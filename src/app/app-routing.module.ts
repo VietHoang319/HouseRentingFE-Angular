@@ -9,6 +9,9 @@ import {HomeComponent} from "./component/pages/home/home.component";
 import {HouseService} from "./service/house.service";
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
 import {MyhouseComponent} from "./component/house/myhouse/myhouse.component";
+import {HouseRentedComponent} from "./component/house/house-rented/house-rented.component";
+import {ListBillComponent} from "./component/bill/list-bill/list-bill.component";
+import {DeleteBillComponent} from "./component/bill/delete-bill/delete-bill.component";
 
 const routes: Routes = [
   {
@@ -42,6 +45,18 @@ const routes: Routes = [
   {
     path: 'rent-house/:id',
     component: RentHouseComponent
+  },
+  {
+    path: 'house-rented/id/:id',
+    component: HouseRentedComponent
+  },
+  {
+    path: 'show-bill',
+    component: ListBillComponent
+  },
+  {
+    path: 'delete-bill/:id',
+    component: DeleteBillComponent
   }
   ];
 
