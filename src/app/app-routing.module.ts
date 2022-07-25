@@ -8,6 +8,7 @@ import {SearchComponent} from "./component/pages/search/search.component";
 import {HomeComponent} from "./component/pages/home/home.component";
 import {HouseService} from "./service/house.service";
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
+import {MyhouseComponent} from "./component/house/myhouse/myhouse.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
     component:DetailHouseComponent
   },
   {
+    path: "my-house/owner_id/:id",
+    component: MyhouseComponent
+  },
+  {
     path: 'search',
     component: SearchComponent,
   },
@@ -46,4 +51,3 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
 }
-

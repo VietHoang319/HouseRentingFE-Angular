@@ -18,6 +18,7 @@ import { SearchbarComponent } from './component/blocks/searchbar/searchbar.compo
 import { SearchComponent } from './component/pages/search/search.component';
 import { FooterComponent } from './component/blocks/footer/footer.component';
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
+import { MyhouseComponent } from './component/house/myhouse/myhouse.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {RentHouseComponent} from "./component/house/rent-house/rent-house.compon
     SearchComponent,
     RentHouseComponent,
     FooterComponent,
+    MyhouseComponent,
   ],
   imports: [
     BrowserModule,
