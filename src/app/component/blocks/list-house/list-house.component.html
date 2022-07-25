@@ -17,7 +17,7 @@
               <div class="box-two proerty-item">
                 <ng-template [ngIf]="isUser || house.status != 2" [ngIfElse]="another">
                 <div class="item-thumb">
-                  <a href="property-1.html" ><img src="{{images[i]}}"></a>
+                  <a [routerLink]="['/detail', house.id]" ><img src="{{images[i]}}"></a>
                 </div>
 
                 <div class="item-entry overflow">
