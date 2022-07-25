@@ -13,6 +13,9 @@ import {ErrorInterceptor} from "./helper/error-interceptor";
 import { HomeComponent } from './component/pages/home/home.component';
 import { HouseCreateComponent } from './component/house/house-create/house-create.component';
 import { ListHouseComponent } from './component/blocks/list-house/list-house.component';
+import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
+import { SearchComponent } from './component/pages/search/search.component';
+import { SliderComponent } from './component/blocks/slider/slider.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { ListHouseComponent } from './component/blocks/list-house/list-house.com
     HomeComponent,
     HouseCreateComponent,
     ListHouseComponent,
+    SearchbarComponent,
+    SearchComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
