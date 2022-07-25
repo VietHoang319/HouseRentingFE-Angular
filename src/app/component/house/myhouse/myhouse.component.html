@@ -26,10 +26,11 @@
                 <div class="item-entry overflow">
                   <h5><a [routerLink]="['/detail', house.id]"> {{house.name}} </a></h5>
                   <div class="dot-hr"></div>
-                  <span class="proerty-price pull-right">{{house.price}}</span>
+                  <span class="proerty-price pull-right"> $ {{house.price}}</span>
+                  <p style="display: none;"><i class="fa-solid fa-location-dot"></i> {{house.address}}</p>
                   <p style="display: none;">{{house.description}}</p>
                   <div class="property-icon">
-                    <img src="assets/assets/img/icon/bed.png">{{house.bedroom}}
+                    <img src="assets/assets/img/icon/bed.png"> {{house.bedroom}} |
                     <img src="assets/assets/img/icon/shawer.png">{{house.bathroom}}
                   </div>
                 </div>
