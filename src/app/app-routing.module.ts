@@ -5,6 +5,7 @@ import {LoginComponent} from "./component/pages/login/login.component";
 import {RegisterComponent} from "./component/pages/register/register.component";
 import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
 import {HouseEditComponent} from "./component/house/house-edit/house-edit.component";
+import {SearchComponent} from "./component/pages/search/search.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'create',
     component: HouseCreateComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent,
   }];
 
 

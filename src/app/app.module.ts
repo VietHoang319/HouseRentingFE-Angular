@@ -18,6 +18,9 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import { ImageCreateComponent } from './component/image/image-create/image-create.component';
+import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
+import { SearchComponent } from './component/pages/search/search.component';
+import { SliderComponent } from './component/blocks/slider/slider.component';
 
 
 @NgModule({
@@ -31,14 +34,15 @@ import { ImageCreateComponent } from './component/image/image-create/image-creat
     ListHouseComponent,
     HouseEditComponent,
     ImageCreateComponent,
+    SearchbarComponent,
+    SearchComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
