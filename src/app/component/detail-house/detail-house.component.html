@@ -1,28 +1,4 @@
-<!--<h2>{{obj.id}}</h2>-->
-<!--<h2>{{obj.category.id}},-->
-<!--</h2>-->
-<!--<h2>{{obj.address}},-->
-<!--</h2>-->
-<!--<h2>{{obj.bedroom}},-->
-<!--</h2>-->
-<!--<h2>{{obj.bathroom}},-->
-<!--</h2>-->
-<!--<h2>{{obj.description}},-->
-<!--</h2>-->
-<!--<h2>{{obj.price}},-->
-<!--</h2>-->
-<!--<h2>{{obj.status}},-->
-<!--</h2>-->
-<div class="page-head">
-  <div class="container">
-    <div class="row">
-<!--      <div class="page-head-content">-->
-<!--&lt;!&ndash;        <h1> class="page-title">Super nice villa </h1>&ndash;&gt;-->
-<!--      </div>-->
-    </div>
-  </div>
-</div>
-<!-- End page header -->
+<app-navbar></app-navbar>
 
 <!-- property area -->
 <div class="content-area single-property" style="background-color: #FCFCFC;">&nbsp;
@@ -46,16 +22,16 @@
 
                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                   <li data-thumb="assets/assets/img/property-1/property1.jpg">
-                    <img src="assets/assets/img/property-1/property1.jpg" />
+                    <img src="assets/assets/img/property-1/property1.jpg"/>
                   </li>
                   <li data-thumb="assets/assets/img/property-1/property2.jpg">
-                    <img src="assets/assets/img/property-1/property2.jpg" />
+                    <img src="assets/assets/img/property-1/property2.jpg"/>
                   </li>
                   <li data-thumb="assets/assets/assets/img/property-1/property3.jpg">
-                    <img src="assets/assets/img/property-1/property3.jpg" />
+                    <img src="assets/assets/img/property-1/property3.jpg"/>
                   </li>
                   <li data-thumb="assets/assets/img/property-1/property4.jpg">
-                    <img src="assets/assets/img/property-1/property4.jpg" />
+                    <img src="assets/assets/img/property-1/property4.jpg"/>
                   </li>
                 </ul>
               </div>
@@ -65,7 +41,7 @@
 
       </div>
 
-      <div class="col-md-4 p0">
+      <div class="col-md-4 p0" *ngIf="userId == obj.owner.id ">
         <aside class="sidebar sidebar-property blog-asside-right property-style2">
           <div class="dealer-widget">
             <div class="dealer-content">
@@ -82,8 +58,16 @@
                                                     <img src="assets/assets/img/icon/sale-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Status</span>
-                                                    <span class="property-info-value">{{obj.status}}</span>
+                                                    <span class="property-info-label">Trạng thái </span>
+                                                    <ng-template [ngIf]="obj.status == 1">
+                                                    <span class="property-info-value">Còn trống</span>
+                                                    </ng-template>
+                                                    <ng-template [ngIf]="obj.status == 2">
+                                                    <span class="property-info-value">Đã thuê</span>
+                                                    </ng-template>
+                                                    <ng-template [ngIf]="obj.status == 3">
+                                                    <span class="property-info-value">Đang sửa</span>
+                                                    </ng-template>
                                                 </span>
                   </div>
 
@@ -92,7 +76,7 @@
                                                     <img src="assets/assets/img/icon/bed-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bedrooms</span>
+                                                    <span class="property-info-label">Phòng ngủ </span>
                                                     <span class="property-info-value">{{obj.bedroom}}</span>
                                                 </span>
                   </div>
@@ -102,7 +86,7 @@
                                                     <img src="assets/assets/img/icon/cars-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bathrooms</span>
+                                                    <span class="property-info-label">Phòng tắm </span>
                                                     <span class="property-info-value">{{obj.bathroom}}</span>
                                                 </span>
                   </div>
@@ -113,18 +97,18 @@
                                                     <img src="assets/assets/img/icon/room-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Category</span>
+                                                    <span class="property-info-label">Danh mục </span>
                                                     <span class="property-info-value">{{obj.category.name}}</span>
                                                 </span>
                   </div>
                 </div>
-<!--                <div class="dealer-section-space">-->
-<!--                  <span>Dealer information</span>-->
-<!--                </div>-->
+                <!--                <div class="dealer-section-space">-->
+                <!--                  <span>Dealer information</span>-->
+                <!--                </div>-->
                 <div class="clear">
                   <div class="col-xs-12 col-sm-12">
                     <h3 class="dealer-name">
-                      <a href="">Nathan James</a>
+                      <a href="">{{obj.owner.username}}</a>
                     </h3>
                   </div>
                 </div>
@@ -137,7 +121,174 @@
                   </ul>
                   <p>{{obj.description}}</p>
                 </div>
+                <button routerLink="/edit-house/{{obj.id}}" class="btn btn-primary">Sua</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
 
+
+      <div class="col-md-4 p0" *ngIf="userId != obj.owner.id && obj.status == 1">
+        <aside class="sidebar sidebar-property blog-asside-right property-style2">
+          <div class="dealer-widget">
+            <div class="dealer-content">
+              <div class="inner-wrapper">
+                <div class="single-property-header">
+                  <h1 class="property-title">{{obj.name}}</h1>
+                  <span class="property-price">{{obj.price}}</span>
+                </div>
+
+                <div class="property-meta entry-meta clearfix ">
+
+                  <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-tag">
+                                                    <img src="assets/assets/img/icon/sale-orange.png">
+                                                </span>
+                    <span class="property-info-entry">
+                                                    <span class="property-info-label">Trạng thái </span>
+                                                    <ng-template [ngIf]="obj.status == 1">
+                                                    <span class="property-info-value">Còn trống</span>
+                                                    </ng-template>
+
+                                                </span>
+                  </div>
+
+                  <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-bed">
+                                                    <img src="assets/assets/img/icon/bed-orange.png">
+                                                </span>
+                    <span class="property-info-entry">
+                                                    <span class="property-info-label">Phòng ngủ</span>
+                                                    <span class="property-info-value">{{obj.bedroom}}</span>
+                                                </span>
+                  </div>
+
+                  <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-bath">
+                                                    <img src="assets/assets/img/icon/cars-orange.png">
+                                                </span>
+                    <span class="property-info-entry">
+                                                    <span class="property-info-label">Phòng tắm</span>
+                                                    <span class="property-info-value">{{obj.bathroom}}</span>
+                                                </span>
+                  </div>
+
+
+                  <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-garage">
+                                                    <img src="assets/assets/img/icon/room-orange.png">
+                                                </span>
+                    <span class="property-info-entry">
+                                                    <span class="property-info-label">Danh mục</span>
+                                                    <span class="property-info-value">{{obj.category.name}}</span>
+                                                </span>
+                  </div>
+                </div>
+                <!--                <div class="dealer-section-space">-->
+                <!--                  <span>Dealer information</span>-->
+                <!--                </div>-->
+                <div class="clear">
+                  <div class="col-xs-12 col-sm-12">
+                    <h3 class="dealer-name">
+                      <a href="">{{obj.owner.username}}</a>
+                    </h3>
+                  </div>
+                </div>
+
+                <div class="clear">
+                  <ul class="dealer-contacts">
+                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li>
+                    <!--                    <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>-->
+                    <!--                    <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>-->
+                  </ul>
+                  <p>{{obj.description}}</p>
+                </div>
+                <button class="btn btn-danger" [routerLink]="['/edit', obj.id]">Thuê</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="col-md-4 p0" *ngIf="userId != obj.owner.id && obj.status != 1">
+        <aside class="sidebar sidebar-property blog-asside-right property-style2">
+          <div class="dealer-widget">
+            <div class="dealer-content">
+              <div class="inner-wrapper">
+                <div class="single-property-header">
+                  <h1 class="property-title">{{obj.name}}</h1>
+                  <span class="property-price">{{obj.price}}</span>
+                </div>
+
+                <div class="property-meta entry-meta clearfix ">
+
+                  <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-tag">
+                                                    <img src="assets/assets/img/icon/sale-orange.png">
+                                                </span>
+                    <span class="property-info-entry">
+                                                    <span class="property-info-label">Trạng thái </span>
+
+                                                    <ng-template [ngIf]="obj.status == 2">
+                                                    <span class="property-info-value">Đã thuê</span>
+                                                    </ng-template>
+                                                    <ng-template [ngIf]="obj.status == 3">
+                                                    <span class="property-info-value">Đang sửa</span>
+                                                    </ng-template>
+                                                </span>
+                  </div>
+
+                  <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-bed">
+                                                    <img src="assets/assets/img/icon/bed-orange.png">
+                                                </span>
+                    <span class="property-info-entry">
+                                                    <span class="property-info-label">Phòng ngủ</span>
+                                                    <span class="property-info-value">{{obj.bedroom}}</span>
+                                                </span>
+                  </div>
+
+                  <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-bath">
+                                                    <img src="assets/assets/img/icon/cars-orange.png">
+                                                </span>
+                    <span class="property-info-entry">
+                                                    <span class="property-info-label">Phòng tắm </span>
+                                                    <span class="property-info-value">{{obj.bathroom}}</span>
+                                                </span>
+                  </div>
+
+
+                  <div class="col-xs-4 col-sm-4 col-md-4 p-b-15">
+                                                <span class="property-info-icon icon-garage">
+                                                    <img src="assets/assets/img/icon/room-orange.png">
+                                                </span>
+                    <span class="property-info-entry">
+                                                    <span class="property-info-label">Danh mục </span>
+                                                    <span class="property-info-value">{{obj.category.name}}</span>
+                                                </span>
+                  </div>
+                </div>
+                <!--                <div class="dealer-section-space">-->
+                <!--                  <span>Dealer information</span>-->
+                <!--                </div>-->
+                <div class="clear">
+                  <div class="col-xs-12 col-sm-12">
+                    <h3 class="dealer-name">
+                      <a href="">{{obj.owner.username}}</a>
+                    </h3>
+                  </div>
+                </div>
+
+                <div class="clear">
+                  <ul class="dealer-contacts">
+                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li>
+                    <!--                    <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>-->
+                    <!--                    <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>-->
+                  </ul>
+                  <p>{{obj.description}}</p>
+                </div>
               </div>
             </div>
           </div>

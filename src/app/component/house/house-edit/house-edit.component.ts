@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {HouseService} from "../../../service/house.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {Category} from "../../../model/category";
 import {FormControl, FormGroup} from "@angular/forms";
 import {CategoryService} from "../../../service/category.service";
-import {User} from "../../../model/user";
+import {HouseService} from "../../../service/house.service";
+import {House} from "../../../model/house";
 
 @Component({
   selector: 'app-house-edit',
@@ -13,55 +13,53 @@ import {User} from "../../../model/user";
 })
 export class HouseEditComponent implements OnInit {
   categories: Category [] | any;
-  house: any;
+  id: any;
   editForm: FormGroup = new FormGroup({
-    id: new FormControl(0),
-  name: new FormControl(''),
-  category: new FormControl(''),
-  address: new FormControl(''),
-  bedroom: new FormControl(0),
-  bathroom: new FormControl(0),
-  description: new FormControl(''),
-  price: new FormControl(0),
-  owner: new FormControl(''),
-  status: new FormControl(1),
+    id: new FormControl(),
+  name: new FormControl(),
+  category: new FormControl(),
+  address: new FormControl(),
+  bedroom: new FormControl(),
+  bathroom: new FormControl(),
+  description: new FormControl(),
+  price: new FormControl(),
   })
 
   constructor(private houseService: HouseService,private activatedRoute: ActivatedRoute,private categoriesService: CategoryService,
               private router: Router) { }
 
   ngOnInit(): void {
-    this.categoriesService.getAll().subscribe((data)=> {
-      console.log(data)
-      this.categories = data
+    this.activatedRoute.paramMap.subscribe((param: ParamMap) => {
+      this.id = param.get("id")
+      console.log(this.id)
+      this.getHouse(this.id)
+      this.getCategory();
     })
-
-    this.activatedRoute.paramMap.subscribe((param) => {
-      const id = param.get('id');
-      this.findById(id);
-    })
-
   }
-  findById(id: any) {
+
+  getHouse(id: number) {
     this.houseService.findById(id).subscribe((data) => {
-      console.log(data);
-      this.editForm = new FormGroup({
-        id: new FormControl(data.id),
-        name: new FormControl(data.name),
-        category: new FormControl(data.category.name),
-        address: new FormControl(data.address),
-        bedroom: new FormControl(data.bedroom),
-        bathroom: new FormControl(data.bathroom),
-        description: new FormControl(data.description),
-        price: new FormControl(data.price),
-        owner: new FormControl(data.owner.username),
-        status: new FormControl(data.status),
+      console.log('Data',data);
+      this.editForm.patchValue({
+        id: data.id,
+        name: data.name,
+        // @ts-ignore
+        category: data.category.id,
+        address: data.address,
+        bedroom: data.bedroom,
+        bathroom: data.bathroom,
+        description: data.description,
+        price: data.price,
+        // @ts-ignore
       })
     })
   }
-
+getCategory(){
+this.categoriesService.getAll().subscribe((categories) =>{this.categories = categories})
+}
   save() {
-    this.house = {
+
+    const house: House = {
       name: this.editForm.value.name,
       category: {
         id: this.editForm.value.id
@@ -71,16 +69,17 @@ export class HouseEditComponent implements OnInit {
       bathroom: this.editForm.value.bathroom,
       description: this.editForm.value.address,
       price: this.editForm.value.price,
-      owner: this.editForm.value.name,
-      status: this.editForm.value.status,
+      owner: {
+        // @ts-ignore
+        id: localStorage.getItem('ID')
+      },
+      status: 1,
     }
-    console.log(this.house)
-    this.houseService.updateHouse(this.editForm.value.id, this.house).subscribe(() => {
+    console.log(house)
+    this.houseService.updateHouse(this.id,house).subscribe(() => {
       alert("Thanh cong")
-      // @ts-ignore
-      $('#exampleModalEdit').modal('hide');
       this.editForm.reset()
-      this.router.navigate(["/houses"])
+      this.router.navigate([""])
     }, error => {
       alert("Loi")
       console.log(error)

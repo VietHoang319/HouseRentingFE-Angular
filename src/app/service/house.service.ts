@@ -23,7 +23,7 @@ export class HouseService {
   }
 
   findById(id: any): Observable<House> {
-    return this.httpClient.get<House>(API_URL + '/houses/' + id);
+    return this.httpClient.get<House>(API_URL + '/homes/' + id);
   }
 
   updateHouse(id: number, house: House): Observable<House> {
