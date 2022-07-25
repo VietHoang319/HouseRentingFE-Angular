@@ -1,8 +1,8 @@
 
 /*==============================================
-slider 2 
+slider 2
 ================================================*/
- 
+
 
 .slide-2 .sl-slider-wrapper {
     width: 100%;
@@ -141,8 +141,8 @@ font-weight: 600;
     background: #ddd;
     background: rgba(150,150,150,0.4);
     cursor: pointer;
-    box-shadow: 
-        0 1px 1px rgba(255,255,255,0.4), 
+    box-shadow:
+        0 1px 1px rgba(255,255,255,0.4),
         inset 0 1px 1px rgba(0,0,0,0.1);
 }
 
@@ -154,16 +154,16 @@ font-weight: 600;
     -ms-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
-    box-shadow: 
-        0 1px 1px rgba(255,255,255,0.4), 
+    box-shadow:
+        0 1px 1px rgba(255,255,255,0.4),
         inset 0 1px 1px rgba(0,0,0,0.1),
         0 0 0 2px rgba(255,255,255,0.5);
 }
 
 .slide-2 .nav-dots span.nav-dot-current,
 .slide-2 .nav-dots span:hover {
-    box-shadow: 
-        0 1px 1px rgba(255,255,255,0.4), 
+    box-shadow:
+        0 1px 1px rgba(255,255,255,0.4),
         inset 0 1px 1px rgba(0,0,0,0.1),
         0 0 0 5px rgba(255,255,255,0.5);
 }
@@ -178,7 +178,7 @@ font-weight: 600;
     border-radius: 50%;
     background: rgba(255,255,255,0.8);
 }
- 
+
 /* Animations for content elements */
 
 .sl-trans-elems .deco{
@@ -328,7 +328,7 @@ font-weight: 600;
 /* Media Queries for custom slider */
 
 @media screen and (max-width: 660px) {
-    
+
 
     .slide-2 .sl-slider-wrapper {
         height: 500px;
@@ -368,7 +368,7 @@ font-weight: 600;
 	height: 100%;
 	top: 0;
 	left: 0;
-} 
+}
 
 .sl-slide {
 	z-index: 1;

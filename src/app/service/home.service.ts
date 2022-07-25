@@ -27,4 +27,8 @@ export class HomeService {
     queryParams = queryParams.append("cus_end", cus_end);
     return this.httpClient.get(API_URL + `/search-by-all`, {params: queryParams})
   }
+
+  getTopOrder() : Observable<any>{
+    return this.httpClient.get(API_URL + "/find-top-orders")
+  }
 }

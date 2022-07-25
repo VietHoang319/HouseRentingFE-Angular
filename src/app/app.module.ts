@@ -15,7 +15,7 @@ import { HouseCreateComponent } from './component/house/house-create/house-creat
 import { ListHouseComponent } from './component/blocks/list-house/list-house.component';
 import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
 import { SearchComponent } from './component/pages/search/search.component';
-import { SliderComponent } from './component/blocks/slider/slider.component';
+import { FooterComponent } from './component/blocks/footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +29,7 @@ import { SliderComponent } from './component/blocks/slider/slider.component';
     ListHouseComponent,
     SearchbarComponent,
     SearchComponent,
-    SliderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
