@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {DetailHouseComponent} from "./component/detail-house/detail-house.component";
-import {HomeComponent} from "./service/home/home.component";
+import {HomeComponent} from "./component/pages/home/home.component";
 import {LoginComponent} from "./component/pages/login/login.component";
 import {RegisterComponent} from "./component/pages/register/register.component";
 import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
@@ -25,7 +25,7 @@ const routes: Routes = [
     component: HouseCreateComponent
   },
   {
-    path: "detail",
+    path: "detail/:id",
     component:DetailHouseComponent
   },
   {
