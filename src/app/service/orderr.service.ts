@@ -18,7 +18,15 @@ export class OrderrService {
     return this.httpClient.get<Orderr>(API_URL)
   }
 
+  findById(id: any): Observable<Orderr> {
+    return this.httpClient.get<Orderr>(`${API_URL}/${id}`)
+  }
+
   rentHouse(order: Orderr): Observable<Orderr> {
     return  this.httpClient.post<Orderr>(API_URL, order)
+  }
+
+  deleteBill(id: any): Observable<Orderr> {
+    return this.httpClient.delete<Orderr>(API_URL + '/' + id)
   }
 }

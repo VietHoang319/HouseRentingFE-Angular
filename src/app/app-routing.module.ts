@@ -10,6 +10,7 @@ import {HouseService} from "./service/house.service";
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
 import {HouseRentedComponent} from "./component/house/house-rented/house-rented.component";
 import {ListBillComponent} from "./component/bill/list-bill/list-bill.component";
+import {DeleteBillComponent} from "./component/bill/delete-bill/delete-bill.component";
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'show-bill',
     component: ListBillComponent
+  },
+  {
+    path: 'delete-bill/:id',
+    component: DeleteBillComponent
   }
   ];
 

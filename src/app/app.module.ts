@@ -20,6 +20,7 @@ import { SliderComponent } from './component/blocks/slider/slider.component';
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
 import { HouseRentedComponent } from './component/house/house-rented/house-rented.component';
 import { ListBillComponent } from './component/bill/list-bill/list-bill.component';
+import { DeleteBillComponent } from './component/bill/delete-bill/delete-bill.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ListBillComponent } from './component/bill/list-bill/list-bill.componen
     RentHouseComponent,
     HouseRentedComponent,
     ListBillComponent,
+    DeleteBillComponent,
   ],
   imports: [
     BrowserModule,

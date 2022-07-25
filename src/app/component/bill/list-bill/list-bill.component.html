@@ -24,10 +24,10 @@
                 <td style="text-align: center">{{order.endTime}}</td>
                 <td style="text-align: center">{{order.total}}</td>
                 <td width="10px">
-                  <a class="nav-link"><i class="fa-solid fa-pencil" style="margin-right: 5px"></i>Edit</a>
+                  <a class="nav-link">Edit</a>
                 </td>
                 <td width="10px">
-                  <a class="nav-link"><i class="fa-solid fa-trash" style="margin-right: 5px"></i>Delete</a>
+                  <a [routerLink]="['/delete-bill', order.id]" class="nav-link">Delete</a>
                 </td>
               </tr>
             </table>
