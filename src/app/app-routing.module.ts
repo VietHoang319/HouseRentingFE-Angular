@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {DetailHouseComponent} from "./component/house/detail-house/detail-house.component";
 import {LoginComponent} from "./component/pages/login/login.component";
 import {RegisterComponent} from "./component/pages/register/register.component";
-import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
 import {SearchComponent} from "./component/pages/search/search.component";
 import {HomeComponent} from "./component/pages/home/home.component";
 import {HouseService} from "./service/house.service";
@@ -24,10 +23,6 @@ const routes: Routes = [
   {
     path: "register",
     component: RegisterComponent
-  },
-  {
-    path: 'create',
-    component: HouseCreateComponent
   },
   {
     path: "detail/:id",

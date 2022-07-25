@@ -12,7 +12,6 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {JwtInterceptor} from "./helper/jwt-interceptor";
 import {ErrorInterceptor} from "./helper/error-interceptor";
 import { HomeComponent } from './component/pages/home/home.component';
-import { HouseCreateComponent } from './component/house/house-create/house-create.component';
 import { ListHouseComponent } from './component/blocks/list-house/list-house.component';
 import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
 import { SearchComponent } from './component/pages/search/search.component';
@@ -31,7 +30,6 @@ import { DeleteBillComponent } from './component/bill/delete-bill/delete-bill.co
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    HouseCreateComponent,
     ListHouseComponent,
     SearchbarComponent,
     SearchComponent,
