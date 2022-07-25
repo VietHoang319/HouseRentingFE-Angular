@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DetailHouseComponent} from "./component/detail-house/detail-house.component";
+import {DetailHouseComponent} from "./component/house/detail-house/detail-house.component";
 import {HomeComponent} from "./component/pages/home/home.component";
 import {LoginComponent} from "./component/pages/login/login.component";
 import {RegisterComponent} from "./component/pages/register/register.component";
 import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
 import {SearchComponent} from "./component/pages/search/search.component";
+import {MyhouseComponent} from "./component/house/myhouse/myhouse.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,9 @@ const routes: Routes = [
   {
     path: "detail/:id",
     component:DetailHouseComponent
+  },{
+    path: "my-house/owner_id/:id",
+    component: MyhouseComponent
   },
   {
     path: 'search',

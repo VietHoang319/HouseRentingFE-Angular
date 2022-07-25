@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DetailHouseComponent } from './component/detail-house/detail-house.component';
+import { DetailHouseComponent } from './component/house/detail-house/detail-house.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { NavbarComponent } from './component/blocks/navbar/navbar.component';
@@ -17,6 +17,7 @@ import { ListHouseComponent } from './component/blocks/list-house/list-house.com
 import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
 import { SearchComponent } from './component/pages/search/search.component';
 import { SliderComponent } from './component/blocks/slider/slider.component';
+import { MyhouseComponent } from './component/house/myhouse/myhouse.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { SliderComponent } from './component/blocks/slider/slider.component';
     SearchbarComponent,
     SearchComponent,
     SliderComponent,
+    MyhouseComponent,
   ],
   imports: [
     BrowserModule,

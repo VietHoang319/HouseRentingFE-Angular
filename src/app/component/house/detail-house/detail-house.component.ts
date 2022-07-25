@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {HomeService} from "../../service/home.service";
-import {House} from "../../model/house";
+import {HomeService} from "../../../service/home.service";
+import {House} from "../../../model/house";
 
 @Component({
   selector: 'app-detail-house',
