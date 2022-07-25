@@ -29,7 +29,7 @@ export class HomeService {
     return this.httpClient.get(API_URL + `/search-by-all`, {params: queryParams})
   }
 
-  findById(id: string): Observable<House> {
-    return this.httpClient.get<House>(`${API_URL}/${id}`);
+  findById(id: any): Observable<House> {
+    return this.httpClient.get<House>(API_URL + '/' + id);
   }
 }

@@ -1,30 +1,8 @@
-<!--<h2>{{obj.id}}</h2>-->
-<!--<h2>{{obj.category.id}},-->
-<!--</h2>-->
-<!--<h2>{{obj.address}},-->
-<!--</h2>-->
-<!--<h2>{{obj.bedroom}},-->
-<!--</h2>-->
-<!--<h2>{{obj.bathroom}},-->
-<!--</h2>-->
-<!--<h2>{{obj.description}},-->
-<!--</h2>-->
-<!--<h2>{{obj.price}},-->
-<!--</h2>-->
-<!--<h2>{{obj.status}},-->
-<!--</h2>-->
 <div class="page-head">
   <div class="container">
-    <div class="row">
-      <!--      <div class="page-head-content">-->
-      <!--&lt;!&ndash;        <h1> class="page-title">Super nice villa </h1>&ndash;&gt;-->
-      <!--      </div>-->
-    </div>
+    <div class="row"></div>
   </div>
 </div>
-<!-- End page header -->
-
-<!-- property area -->
 <div class="content-area single-property" style="background-color: #FCFCFC;">&nbsp;
   <div class="container">
 
@@ -126,9 +104,6 @@
                                                 </span>
                   </div>
                 </div>
-                <!--                <div class="dealer-section-space">-->
-                <!--                  <span>Dealer information</span>-->
-                <!--                </div>-->
                 <div class="clear">
                   <div class="col-xs-12 col-sm-12">
                     <h3 class="dealer-name">
@@ -139,10 +114,7 @@
 
                 <div class="clear">
                   <ul class="dealer-contacts">
-                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li>
-                    <!--                    <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>-->
-                    <!--                    <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>-->
-                  </ul>
+                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li></ul>
                   <p>{{obj.description}}</p>
                 </div>
                 <button class="btn btn-primary">Sua</button>
@@ -209,9 +181,6 @@
                                                 </span>
                   </div>
                 </div>
-                <!--                <div class="dealer-section-space">-->
-                <!--                  <span>Dealer information</span>-->
-                <!--                </div>-->
                 <div class="clear">
                   <div class="col-xs-12 col-sm-12">
                     <h3 class="dealer-name">
@@ -222,13 +191,10 @@
 
                 <div class="clear">
                   <ul class="dealer-contacts">
-                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li>
-                    <!--                    <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>-->
-                    <!--                    <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>-->
-                  </ul>
+                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li></ul>
                   <p>{{obj.description}}</p>
                 </div>
-                <button class="btn btn-danger" [routerLink]="['/edit', obj.id]">Thuê</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"  [routerLink]="['/rent-house', obj.id]">Thuê</button>
               </div>
             </div>
           </div>
@@ -294,9 +260,6 @@
                                                 </span>
                   </div>
                 </div>
-                <!--                <div class="dealer-section-space">-->
-                <!--                  <span>Dealer information</span>-->
-                <!--                </div>-->
                 <div class="clear">
                   <div class="col-xs-12 col-sm-12">
                     <h3 class="dealer-name">
@@ -307,10 +270,7 @@
 
                 <div class="clear">
                   <ul class="dealer-contacts">
-                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li>
-                    <!--                    <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>-->
-                    <!--                    <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>-->
-                  </ul>
+                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li></ul>
                   <p>{{obj.description}}</p>
                 </div>
               </div>

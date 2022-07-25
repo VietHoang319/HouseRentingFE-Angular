@@ -14,9 +14,17 @@ export class ListHouseComponent implements OnInit {
   @Input()
   images: Image[] = []
 
+  isUser = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('ID')) {
+      this.isUser = true;
+    } else {
+      this.isUser = false;
+    }
   }
+
 
 }
