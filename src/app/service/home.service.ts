@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
+import {House} from "../model/house";
 
 const API_URL = environment.apiUrl + "/homes"
 
@@ -30,5 +31,9 @@ export class HomeService {
 
   getTopOrder() : Observable<any>{
     return this.httpClient.get(API_URL + "/find-top-orders")
+  }
+
+  findById(id: any): Observable<House> {
+    return this.httpClient.get<House>(API_URL + '/' + id);
   }
 }

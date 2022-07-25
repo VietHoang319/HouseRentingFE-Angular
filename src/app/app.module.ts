@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DetailHouseComponent } from './component/house/detail-house/detail-house.component';
 import { NavbarComponent } from './component/blocks/navbar/navbar.component';
 import { LoginComponent } from './component/pages/login/login.component';
 import { RegisterComponent } from './component/pages/register/register.component';
@@ -16,11 +17,13 @@ import { ListHouseComponent } from './component/blocks/list-house/list-house.com
 import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
 import { SearchComponent } from './component/pages/search/search.component';
 import { FooterComponent } from './component/blocks/footer/footer.component';
+import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    DetailHouseComponent,
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
@@ -29,6 +32,7 @@ import { FooterComponent } from './component/blocks/footer/footer.component';
     ListHouseComponent,
     SearchbarComponent,
     SearchComponent,
+    RentHouseComponent,
     FooterComponent,
   ],
   imports: [

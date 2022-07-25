@@ -15,12 +15,13 @@
           <div id="list-type" class="proerty-th">
             <div class="col-sm-6 col-md-3 p0" *ngFor="let house of houses; index as i">
               <div class="box-two proerty-item">
+                <ng-template [ngIf]="isUser || house.status != 2" [ngIfElse]="another">
                 <div class="item-thumb">
                   <a href="property-1.html" ><img src="{{images[i]}}"></a>
                 </div>
 
                 <div class="item-entry overflow">
-                  <h5><a href="property-1.html"> {{house.name}} </a></h5>
+                  <h5><a [routerLink]="['/detail', house.id]"> {{house.name}} </a></h5>
                   <div class="dot-hr"></div>
                   <span class="proerty-price pull-right"> $ {{house.price}}</span>
                   <p style="display: none;">{{house.description}}</p>
@@ -30,7 +31,24 @@
                   </div>
                 </div>
 
+                </ng-template>
+                <ng-template #another>
+                  <div class="item-thumb">
+                    <a href="property-1.html" ><img src="{{images[i]}}"></a>
+                  </div>
 
+                  <div class="item-entry overflow">
+                    <h5><a href="property-1.html"> {{house.name}} </a></h5>
+                    <div class="dot-hr"></div>
+                    <span class="proerty-price pull-right"> $ {{house.price}}</span>
+                    <p style="display: none;">{{house.description}}</p>
+                    <div class="property-icon">
+                      <img src="assets/assets/img/icon/bed.png"> {{house.bedroom}} |
+                      <img src="assets/assets/img/icon/shawer.png"> {{house.bathroom}}
+                    </div>
+                  </div>
+                  <button>Th</button>
+                </ng-template>
               </div>
             </div>
           </div>
