@@ -1,28 +1,4 @@
-<!--<h2>{{obj.id}}</h2>-->
-<!--<h2>{{obj.category.id}},-->
-<!--</h2>-->
-<!--<h2>{{obj.address}},-->
-<!--</h2>-->
-<!--<h2>{{obj.bedroom}},-->
-<!--</h2>-->
-<!--<h2>{{obj.bathroom}},-->
-<!--</h2>-->
-<!--<h2>{{obj.description}},-->
-<!--</h2>-->
-<!--<h2>{{obj.price}},-->
-<!--</h2>-->
-<!--<h2>{{obj.status}},-->
-<!--</h2>-->
-<div class="page-head">
-  <div class="container">
-    <div class="row">
-      <!--      <div class="page-head-content">-->
-      <!--&lt;!&ndash;        <h1> class="page-title">Super nice villa </h1>&ndash;&gt;-->
-      <!--      </div>-->
-    </div>
-  </div>
-</div>
-<!-- End page header -->
+<app-navbar></app-navbar>
 
 <!-- property area -->
 <div class="content-area single-property" style="background-color: #FCFCFC;">&nbsp;
@@ -82,7 +58,7 @@
                                                     <img src="assets/assets/img/icon/sale-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Status</span>
+                                                    <span class="property-info-label">Trạng thái </span>
                                                     <ng-template [ngIf]="obj.status == 1">
                                                     <span class="property-info-value">Còn trống</span>
                                                     </ng-template>
@@ -100,7 +76,7 @@
                                                     <img src="assets/assets/img/icon/bed-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bedrooms</span>
+                                                    <span class="property-info-label">Phòng ngủ </span>
                                                     <span class="property-info-value">{{obj.bedroom}}</span>
                                                 </span>
                   </div>
@@ -110,7 +86,7 @@
                                                     <img src="assets/assets/img/icon/cars-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bathrooms</span>
+                                                    <span class="property-info-label">Phòng tắm </span>
                                                     <span class="property-info-value">{{obj.bathroom}}</span>
                                                 </span>
                   </div>
@@ -121,7 +97,7 @@
                                                     <img src="assets/assets/img/icon/room-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Category</span>
+                                                    <span class="property-info-label">Danh mục </span>
                                                     <span class="property-info-value">{{obj.category.name}}</span>
                                                 </span>
                   </div>
@@ -170,7 +146,7 @@
                                                     <img src="assets/assets/img/icon/sale-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Status</span>
+                                                    <span class="property-info-label">Trạng thái </span>
                                                     <ng-template [ngIf]="obj.status == 1">
                                                     <span class="property-info-value">Còn trống</span>
                                                     </ng-template>
@@ -183,7 +159,7 @@
                                                     <img src="assets/assets/img/icon/bed-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bedrooms</span>
+                                                    <span class="property-info-label">Phòng ngủ</span>
                                                     <span class="property-info-value">{{obj.bedroom}}</span>
                                                 </span>
                   </div>
@@ -193,7 +169,7 @@
                                                     <img src="assets/assets/img/icon/cars-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bathrooms</span>
+                                                    <span class="property-info-label">Phòng tắm</span>
                                                     <span class="property-info-value">{{obj.bathroom}}</span>
                                                 </span>
                   </div>
@@ -204,7 +180,7 @@
                                                     <img src="assets/assets/img/icon/room-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Category</span>
+                                                    <span class="property-info-label">Danh mục</span>
                                                     <span class="property-info-value">{{obj.category.name}}</span>
                                                 </span>
                   </div>
@@ -252,7 +228,7 @@
                                                     <img src="assets/assets/img/icon/sale-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Status</span>
+                                                    <span class="property-info-label">Trạng thái </span>
 
                                                     <ng-template [ngIf]="obj.status == 2">
                                                     <span class="property-info-value">Đã thuê</span>
@@ -268,7 +244,7 @@
                                                     <img src="assets/assets/img/icon/bed-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bedrooms</span>
+                                                    <span class="property-info-label">Phòng ngủ</span>
                                                     <span class="property-info-value">{{obj.bedroom}}</span>
                                                 </span>
                   </div>
@@ -278,7 +254,7 @@
                                                     <img src="assets/assets/img/icon/cars-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bathrooms</span>
+                                                    <span class="property-info-label">Phòng tắm </span>
                                                     <span class="property-info-value">{{obj.bathroom}}</span>
                                                 </span>
                   </div>
@@ -289,7 +265,7 @@
                                                     <img src="assets/assets/img/icon/room-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Category</span>
+                                                    <span class="property-info-label">Danh mục </span>
                                                     <span class="property-info-value">{{obj.category.name}}</span>
                                                 </span>
                   </div>
