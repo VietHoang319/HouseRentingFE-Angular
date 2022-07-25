@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="assets/assets/css/fontello.css">
   <link rel="stylesheet" href="assets/assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css">
   <link rel="stylesheet" href="assets/assets/fonts/icon-7-stroke/css/helper.css">
-  <link href="assets/assets/css/animate.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="assets/assets/css/animate.css">
+  <link href="assets/assets/css/animate.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="assets/assets/css/bootstrap-select.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="assets/assets/css/icheck.min_all.css">
@@ -21,8 +21,8 @@
   <link rel="stylesheet" href="assets/assets/css/owl.carousel.css">
   <link rel="stylesheet" href="assets/assets/css/owl.theme.css">
   <link rel="stylesheet" href="assets/assets/css/owl.transitions.css">
-  <link rel="stylesheet" href="assets/assets/css/lightslider.min.css">
   <link rel="stylesheet" href="assets/assets/css/jquery.slitslider.css">
+  <link rel="stylesheet" href="assets/assets/css/lightslider.min.css">
   <link rel="stylesheet" href="assets/assets/css/style.css">
   <link rel="stylesheet" href="assets/assets/css/responsive.css">
   <noscript>
@@ -43,29 +43,10 @@
   <script src="assets/assets/js/wow.js"></script>
   <script src="assets/assets/js/icheck.min.js"></script>
   <script src="assets/assets/js/price-range.js"></script>
-  <script type="text/javascript" src="assets/assets/js/lightslider.min.js"></script>
   <script src="assets/assets/js/jquery.ba-cond.min.js"></script>
   <script src="assets/assets/js/jquery.slitslider.js"></script>
+  <script type="text/javascript" src="assets/assets/js/lightslider.min.js"></script>
   <script src="assets/assets/js/main.js"></script>
-
-
-  <script>
-    $(document).ready(function () {
-
-      $('#image-gallery').lightSlider({
-        gallery: true,
-        item: 1,
-        thumbItem: 9,
-        slideMargin: 0,
-        speed: 500,
-        auto: true,
-        loop: true,
-        onSliderLoad: function () {
-          $('#image-gallery').removeClass('cS-hidden');
-        }
-      });
-    });
-  </script>
   <script type="text/javascript">
     $(function () {
 
@@ -130,6 +111,25 @@
 
        */
 
+    });
+  </script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      $('#image-gallery').lightSlider({
+        gallery: true,
+        item: 1,
+        thumbItem: 9,
+        slideMargin: 0,
+        speed: 500,
+        auto: true,
+        loop: true,
+        onSliderLoad: function () {
+          $('#image-gallery').removeClass('cS-hidden');
+        }
+      });
     });
   </script>
 </body>

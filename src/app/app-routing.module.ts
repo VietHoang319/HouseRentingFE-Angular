@@ -25,7 +25,7 @@ const routes: Routes = [
     component: HouseCreateComponent
   },
   {
-    path: "detail",
+    path: "detail/:id",
     component:DetailHouseComponent
   },
   {
@@ -33,10 +33,10 @@ const routes: Routes = [
     component: SearchComponent,
   }];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
 }
+

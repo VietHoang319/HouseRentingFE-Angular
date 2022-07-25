@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="item-entry overflow">
-                  <h5><a href="property-1.html"> {{house.name}} </a></h5>
+                  <h5><a [routerLink]="['/detail', house.id]"> {{house.name}} </a></h5>
                   <div class="dot-hr"></div>
                   <span class="proerty-price pull-right"> $ {{house.price}}</span>
                   <p style="display: none;">{{house.description}}</p>

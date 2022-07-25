@@ -17,10 +17,6 @@ export class HomeService {
     return this.httpClient.get(API_URL)
   }
 
-  findById(id: string): Observable<House> {
-    return this.httpClient.get<House>(`${API_URL}/${id}`);
-  }
-
   search(address: string, start: number, end: number, bathroom: number, bedroom: number, cus_begin: string, cus_end: string) : Observable<any> {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("address", address);
@@ -31,5 +27,9 @@ export class HomeService {
     queryParams = queryParams.append("cus_begin", cus_begin);
     queryParams = queryParams.append("cus_end", cus_end);
     return this.httpClient.get(API_URL + `/search-by-all`, {params: queryParams})
+  }
+
+  findById(id: string): Observable<House> {
+    return this.httpClient.get<House>(`${API_URL}/${id}`);
   }
 }
