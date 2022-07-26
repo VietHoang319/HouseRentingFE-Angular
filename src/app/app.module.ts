@@ -12,13 +12,14 @@ import { RegisterComponent } from './component/pages/register/register.component
 import {JwtInterceptor} from "./helper/jwt-interceptor";
 import {ErrorInterceptor} from "./helper/error-interceptor";
 import { HomeComponent } from './component/pages/home/home.component';
-import { HouseCreateComponent } from './component/house/house-create/house-create.component';
 import { ListHouseComponent } from './component/blocks/list-house/list-house.component';
 import {SearchComponent} from "./component/pages/search/search.component";
 import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
-import { SliderComponent } from './component/blocks/slider/slider.component';
+import { FooterComponent } from './component/blocks/footer/footer.component';
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
 import { MyBillComponent } from './component/bill/my-bill/my-bill.component';
+import { MyhouseComponent } from './component/house/myhouse/myhouse.component';
+import {HouseEditComponent} from "./component/house/house-edit/house-edit.component";
 
 
 @NgModule({
@@ -29,13 +30,14 @@ import { MyBillComponent } from './component/bill/my-bill/my-bill.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    HouseCreateComponent,
     ListHouseComponent,
     SearchbarComponent,
     SearchComponent,
-    SliderComponent,
     RentHouseComponent,
     MyBillComponent,
+    FooterComponent,
+    MyhouseComponent,
+    HouseEditComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,10 @@ export class HomeService {
     return this.httpClient.get(API_URL + `/search-by-all`, {params: queryParams})
   }
 
+  getTopOrder() : Observable<any>{
+    return this.httpClient.get(API_URL + "/find-top-orders")
+  }
+
   findById(id: any): Observable<House> {
     return this.httpClient.get<House>(API_URL + '/' + id);
   }

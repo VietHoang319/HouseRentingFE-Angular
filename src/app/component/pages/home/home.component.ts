@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
       console.log(data)
       this.houses = data
       for (let item of this.houses) {
+        // @ts-ignore
         this.imageService.getFirstImageByHouse(item.id).subscribe(data => {
           this.images.push(data.image)
         }, error => {

@@ -1,0 +1,86 @@
+<app-navbar></app-navbar>
+<!--<app-list-house [houses]="houses"></app-list-house>-->
+<div class="content-area recent-property" style="background-color: #FFF;">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12 pr-30 padding-top-40 properties-page user-properties">
+
+        <div class="section">
+          <div class="page-subheader sorting pl0 pr-10">
+            <ul class="sort-by-list pull-right">
+              <li class="active">
+                <button class="btn btn-default btn-login" type="button" data-toggle="modal" data-target="#exampleModal"> Thêm nhà bạn muốn cho thuê
+                </button>
+              </li>
+            </ul><!--/ .sort-by-list-->
+          </div>
+        </div>
+
+        <div class="section">
+          <div id="list-type" class="proerty-th-list">
+            <div class="col-md-4 p0" *ngFor="let house of houses; index as i">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a [routerLink]="['/detail', house.id]"><img src="{{images[i].image}}"></a>
+                </div>
+                <div class="item-entry overflow">
+                  <h5><a [routerLink]="['/detail', house.id]"> {{house.name}} </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="proerty-price pull-right"> $ {{house.price}}</span>
+                  <p style="display: none;"><i class="fa-solid fa-location-dot"></i> {{house.address}}</p>
+                  <p style="display: none;">{{house.description}}</p>
+                  <div class="property-icon">
+                    <img src="assets/assets/img/icon/bed.png"> {{house.bedroom}} |
+                    <img src="assets/assets/img/icon/shawer.png">{{house.bathroom}}
+                  </div>
+                  <button [routerLink]="['/edit-house', house.id]" class="btn btn-primary">Sửa</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thêm Nhà</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="houseForm" (submit)="submit()">
+          <label>Tên nhà:</label>
+          <input type='text' formControlName="name" class="form-control" placeholder="Tên nhà">
+          <label>Loại</label>
+          <select class="form-control" formControlName="category">
+            <option  *ngFor="let category of listCategory" [value]="category.id">
+              {{category.name}}
+            </option>
+          </select>
+          <label>Địa chỉ:</label>
+          <input type='text' formControlName="address" class="form-control" placeholder="Địa chỉ">
+          <label>Phòng ngủ:</label>
+          <input type='number' formControlName="bedroom" class="form-control" placeholder="Phòng ngủ" min="1" max="10" value="1">
+          <label>Phòng tắm:</label>
+          <input type='number' formControlName="bathroom" class="form-control" placeholder="Phòng tắm" min="1" max="3" value="1">
+          <label>Nội dung:</label>
+          <input type="textarea" formControlName="description" class="form-control" placeholder="Nội dung">
+          <label>Giá:</label>
+          <input type="number" formControlName="price" class="form-control" placeholder="Giá" min="1" value="1">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Thêm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,28 +1,28 @@
+<app-navbar></app-navbar>
+<form [formGroup]="editForm" (submit)="save()">
+  <input type="hidden" formControlName="id">
+  <label>Name:</label>
+  <input type='text' formControlName="name" class="form-control">
+  <label>Category: </label>
+  <select formControlName="category">
+    <option *ngFor="let cate of categories" [value]="cate.id">
+      {{cate.name}}
+    </option>
+  </select><br>
+  <label>Address:</label>
+  <input type='text' formControlName="address" class="form-control">
+  <label>bedroom:</label>
+  <input type='number' formControlName="bedroom" class="form-control">
+  <label>Bathroom:</label>
+  <input type='number' formControlName="bathroom" class="form-control">
+  <label>Description:</label>
+  <input type='text' formControlName="description" class="form-control">
+  <label>Price:</label>
+  <input type='text' formControlName="price" class="form-control">
 
-        <form [formGroup]="editForm" (submit)="save()">
-          <input type="hidden" formControlName="id">
-          <label>Name:</label>
-          <input type='text' formControlName="name" class="form-control" >
-          <label>Category: </label>
-          <select formControlName="category">
-            <option *ngFor="let cate of categories" [value]="cate.id">
-              {{cate.name}}
-            </option>
-          </select><br>
-          <label>Address:</label>
-          <input type='text' formControlName="address" class="form-control" >
-          <label>bedroom:</label>
-          <input type='number' formControlName="bedroom" class="form-control" >
-          <label>Bathroom:</label>
-          <input type='number' formControlName="bathroom" class="form-control" >
-          <label>Description:</label>
-          <input type='text' formControlName="description" class="form-control" >
-          <label>Price:</label>
-          <input type='text' formControlName="price" class="form-control" >
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" (click)="save()">Save changes</button>
-          </div>
-        </form>
-
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" (click)="save()">Save changes</button>
+  </div>
+</form>
+<app-footer></app-footer>

@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, DoCheck, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {HomeService} from "../../../service/home.service";
+import {HouseService} from "../../../service/house.service";
+import {House} from "../../../model/house";
+import {Image} from "../../../model/image";
+import {ImageService} from "../../../service/image.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {Category} from "../../../model/category";
-import {HouseService} from "../../../service/house.service";
 import {CategoryService} from "../../../service/category.service";
-import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-house-create',
-  templateUrl: './house-create.component.html',
-  styleUrls: ['./house-create.component.css']
+  selector: 'app-myhouse',
+  templateUrl: './myhouse.component.html',
+  styleUrls: ['./myhouse.component.css']
 })
-export class HouseCreateComponent implements OnInit {
+export class MyhouseComponent implements OnInit {
   houseForm: FormGroup = new FormGroup({
     name: new FormControl(),
     category: new FormControl(),
@@ -24,16 +29,37 @@ export class HouseCreateComponent implements OnInit {
   house: any;
   listCategory: Category[] = []
 
+  houses: any
+  images: Image[] = []
+
+  id = localStorage.getItem("ID")
+
+  obj: any = [];
 
   constructor(private houseService: HouseService,
-              private categoryService: CategoryService,
-              private router: Router,
-              ) { }
+              private categoryService: CategoryService, private imageService: ImageService) {
+  }
 
   ngOnInit(): void {
+    this.findMyHouse(this.id)
     this.categoryService.getAll().subscribe((data) => {
       console.log(data)
       this.listCategory = data
+    })
+  }
+
+
+
+  findMyHouse(id: any) {
+    this.houseService.findByOwnerId(id).subscribe((data) => {
+      this.houses = data
+      for (let item of this.houses) {
+        this.imageService.getFirstImageByHouse(item.id).subscribe(data => {
+          this.images.push(data.image)
+        }, error => {
+          console.log(error)
+        })
+      }
     })
   }
 
@@ -59,12 +85,11 @@ export class HouseCreateComponent implements OnInit {
       alert("Thêm thành công")
       // @ts-ignore
       $('#exampleModal').modal('hide')
+      this.ngOnInit()
       this.houseForm.reset()
-      this.router.navigate([''])
     }, error => {
       alert("ERRORR")
       console.log(error)
     })
   }
-
 }

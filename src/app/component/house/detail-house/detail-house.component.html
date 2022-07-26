@@ -1,8 +1,5 @@
-<div class="page-head">
-  <div class="container">
-    <div class="row"></div>
-  </div>
-</div>
+<app-navbar></app-navbar>
+
 <div class="content-area single-property" style="background-color: #FCFCFC;">&nbsp;
   <div class="container">
 
@@ -13,34 +10,19 @@
           <div class="row">
             <div class="light-slide-item">
               <div class="clearfix">
-                <div class="favorite-and-print">
-                  <a class="add-to-fav" href="#login-modal" data-toggle="modal">
-                    <i class="fa fa-star-o"></i>
-                  </a>
-                  <a class="printer-icon " href="javascript:window.print()">
-                    <i class="fa fa-print"></i>
-                  </a>
-                </div>
 
                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                  <li data-thumb="assets/assets/img/property-1/property1.jpg">
-                    <img src="assets/assets/img/property-1/property1.jpg"/>
-                  </li>
-                  <li data-thumb="assets/assets/img/property-1/property2.jpg">
-                    <img src="assets/assets/img/property-1/property2.jpg"/>
-                  </li>
-                  <li data-thumb="assets/assets/assets/img/property-1/property3.jpg">
-                    <img src="assets/assets/img/property-1/property3.jpg"/>
-                  </li>
-                  <li data-thumb="assets/assets/img/property-1/property4.jpg">
-                    <img src="assets/assets/img/property-1/property4.jpg"/>
-                  </li>
+                  <div *ngFor="let item of images">
+                    <li attr.data-thumb="{{item.image}}">
+                      <img src="{{item.image}}"/>
+                    </li>
+                  </div>
                 </ul>
+
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="col-md-4 p0" *ngIf="userId == obj.owner.id ">
@@ -50,7 +32,7 @@
               <div class="inner-wrapper">
                 <div class="single-property-header">
                   <h1 class="property-title">{{obj.name}}</h1>
-                  <span class="property-price">{{obj.price}}</span>
+                  <span class="property-price">$ {{obj.price}}</span>
                 </div>
 
                 <div class="property-meta entry-meta clearfix ">
@@ -60,7 +42,7 @@
                                                     <img src="assets/assets/img/icon/sale-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Status</span>
+                                                    <span class="property-info-label"></span>
                                                     <ng-template [ngIf]="obj.status == 1">
                                                     <span class="property-info-value">Còn trống</span>
                                                     </ng-template>
@@ -78,7 +60,7 @@
                                                     <img src="assets/assets/img/icon/bed-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bedrooms</span>
+                                                    <span class="property-info-label">Phòng ngủ</span>
                                                     <span class="property-info-value">{{obj.bedroom}}</span>
                                                 </span>
                   </div>
@@ -88,7 +70,7 @@
                                                     <img src="assets/assets/img/icon/cars-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bathrooms</span>
+                                                    <span class="property-info-label">Phòng tắm</span>
                                                     <span class="property-info-value">{{obj.bathroom}}</span>
                                                 </span>
                   </div>
@@ -99,7 +81,7 @@
                                                     <img src="assets/assets/img/icon/room-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Category</span>
+                                                    <span class="property-info-label">Loại phòng</span>
                                                     <span class="property-info-value">{{obj.category.name}}</span>
                                                 </span>
                   </div>
@@ -114,16 +96,16 @@
 
                 <div class="clear">
                   <ul class="dealer-contacts">
-                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li></ul>
+                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li>
+                  </ul>
                   <p>{{obj.description}}</p>
                 </div>
-                <button class="btn btn-primary">Sua</button>
+                <button class="btn btn-default btn-login">Sửa</button>
               </div>
             </div>
           </div>
         </aside>
       </div>
-
 
       <div class="col-md-4 p0" *ngIf="userId != obj.owner.id && obj.status == 1">
         <aside class="sidebar sidebar-property blog-asside-right property-style2">
@@ -142,7 +124,7 @@
                                                     <img src="assets/assets/img/icon/sale-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Status</span>
+                                                    <span class="property-info-label"></span>
                                                     <ng-template [ngIf]="obj.status == 1">
                                                     <span class="property-info-value">Còn trống</span>
                                                     </ng-template>
@@ -155,7 +137,7 @@
                                                     <img src="assets/assets/img/icon/bed-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bedrooms</span>
+                                                    <span class="property-info-label">Phòng ngủ</span>
                                                     <span class="property-info-value">{{obj.bedroom}}</span>
                                                 </span>
                   </div>
@@ -165,7 +147,7 @@
                                                     <img src="assets/assets/img/icon/cars-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bathrooms</span>
+                                                    <span class="property-info-label">Phòng tắm</span>
                                                     <span class="property-info-value">{{obj.bathroom}}</span>
                                                 </span>
                   </div>
@@ -176,7 +158,7 @@
                                                     <img src="assets/assets/img/icon/room-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Category</span>
+                                                    <span class="property-info-label">Loại phòng</span>
                                                     <span class="property-info-value">{{obj.category.name}}</span>
                                                 </span>
                   </div>
@@ -191,10 +173,13 @@
 
                 <div class="clear">
                   <ul class="dealer-contacts">
-                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li></ul>
+                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li>
+                  </ul>
                   <p>{{obj.description}}</p>
                 </div>
-                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"  [routerLink]="['/rent-house', obj.id]">Thuê</button>
+                <button class="btn btn-default btn-login" data-toggle="modal" data-target="#exampleModal"
+                        [routerLink]="['/rent-house', obj.id]">Thuê
+                </button>
               </div>
             </div>
           </div>
@@ -218,7 +203,7 @@
                                                     <img src="assets/assets/img/icon/sale-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Status</span>
+                                                    <span class="property-info-label"></span>
 
                                                     <ng-template [ngIf]="obj.status == 2">
                                                     <span class="property-info-value">Đã thuê</span>
@@ -234,7 +219,7 @@
                                                     <img src="assets/assets/img/icon/bed-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bedrooms</span>
+                                                    <span class="property-info-label">Phòng ngủ</span>
                                                     <span class="property-info-value">{{obj.bedroom}}</span>
                                                 </span>
                   </div>
@@ -244,7 +229,7 @@
                                                     <img src="assets/assets/img/icon/cars-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Bathrooms</span>
+                                                    <span class="property-info-label">Phòng tắm</span>
                                                     <span class="property-info-value">{{obj.bathroom}}</span>
                                                 </span>
                   </div>
@@ -255,7 +240,7 @@
                                                     <img src="assets/assets/img/icon/room-orange.png">
                                                 </span>
                     <span class="property-info-entry">
-                                                    <span class="property-info-label">Category</span>
+                                                    <span class="property-info-label">Loại phòng</span>
                                                     <span class="property-info-value">{{obj.category.name}}</span>
                                                 </span>
                   </div>
@@ -270,7 +255,8 @@
 
                 <div class="clear">
                   <ul class="dealer-contacts">
-                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li></ul>
+                    <li><i class="pe-7s-map-marker strong"> </i>{{obj.address}}</li>
+                  </ul>
                   <p>{{obj.description}}</p>
                 </div>
               </div>
@@ -283,3 +269,5 @@
 
   </div>
 </div>
+
+<app-footer></app-footer>
