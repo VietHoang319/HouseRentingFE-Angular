@@ -12,7 +12,10 @@ export class ImageService {
 
   constructor(private httpClient : HttpClient) { }
 
-  getFirstImageByHouse(id: number) : Observable<any> {
+  getFirstImageByHouse(id: any) : Observable<any> {
     return this.httpClient.get(API_URL + `/${id}`)
   }
+  save(image: any): Observable<any> {
+    return this.httpClient.post(API_URL, image);
+  };
 }

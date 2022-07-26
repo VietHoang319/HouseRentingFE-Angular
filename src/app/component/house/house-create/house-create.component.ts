@@ -27,7 +27,8 @@ export class HouseCreateComponent implements OnInit {
 
   constructor(private houseService: HouseService,
               private categoryService: CategoryService,
-              private router: Router) { }
+              private router: Router,
+              ) { }
 
   ngOnInit(): void {
     this.categoryService.getAll().subscribe((data) => {
@@ -65,4 +66,5 @@ export class HouseCreateComponent implements OnInit {
       console.log(error)
     })
   }
+
 }
