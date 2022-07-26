@@ -6,11 +6,8 @@ import {RegisterComponent} from "./component/pages/register/register.component";
 import {HouseCreateComponent} from "./component/house/house-create/house-create.component";
 import {SearchComponent} from "./component/pages/search/search.component";
 import {HomeComponent} from "./component/pages/home/home.component";
-import {HouseService} from "./service/house.service";
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
-import {HouseRentedComponent} from "./component/house/house-rented/house-rented.component";
-import {ListBillComponent} from "./component/bill/list-bill/list-bill.component";
-import {DeleteBillComponent} from "./component/bill/delete-bill/delete-bill.component";
+import {MyBillComponent} from "./component/bill/my-bill/my-bill.component";
 
 const routes: Routes = [
   {
@@ -42,16 +39,8 @@ const routes: Routes = [
     component: RentHouseComponent
   },
   {
-    path: 'house-rented/id/:id',
-    component: HouseRentedComponent
-  },
-  {
-    path: 'show-bill',
-    component: ListBillComponent
-  },
-  {
-    path: 'delete-bill/:id',
-    component: DeleteBillComponent
+    path: 'my-order/:id',
+    component: MyBillComponent
   }
   ];
 

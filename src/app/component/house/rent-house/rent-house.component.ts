@@ -55,9 +55,9 @@ export class RentHouseComponent implements OnInit {
       total: price * this.period(Number(new Date(this.rentForm.value.startTime)), Number(new Date(this.rentForm.value.endTime))),
       status: 1
     }
+
     console.log(this.order)
     this.orderService.rentHouse(this.order).subscribe((data) => {
-        alert("Thuê thành công")
         // @ts-ignore
       $('#exampleModal').modal('hide')
         this.rentForm.reset()

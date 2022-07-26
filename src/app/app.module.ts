@@ -18,9 +18,7 @@ import {SearchComponent} from "./component/pages/search/search.component";
 import { SearchbarComponent } from './component/blocks/searchbar/searchbar.component';
 import { SliderComponent } from './component/blocks/slider/slider.component';
 import {RentHouseComponent} from "./component/house/rent-house/rent-house.component";
-import { HouseRentedComponent } from './component/house/house-rented/house-rented.component';
-import { ListBillComponent } from './component/bill/list-bill/list-bill.component';
-import { DeleteBillComponent } from './component/bill/delete-bill/delete-bill.component';
+import { MyBillComponent } from './component/bill/my-bill/my-bill.component';
 
 
 @NgModule({
@@ -37,9 +35,7 @@ import { DeleteBillComponent } from './component/bill/delete-bill/delete-bill.co
     SearchComponent,
     SliderComponent,
     RentHouseComponent,
-    HouseRentedComponent,
-    ListBillComponent,
-    DeleteBillComponent,
+    MyBillComponent,
   ],
   imports: [
     BrowserModule,

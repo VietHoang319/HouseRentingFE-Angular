@@ -26,7 +26,11 @@ export class OrderrService {
     return  this.httpClient.post<Orderr>(API_URL, order)
   }
 
-  deleteBill(id: any): Observable<Orderr> {
-    return this.httpClient.delete<Orderr>(API_URL + '/' + id)
+  findByMyId(id: any): Observable<Orderr> {
+    return this.httpClient.get<Orderr>(API_URL + '/find-by-customer/' + id)
+  }
+
+  update(id: any, order: any): Observable<any> {
+    return this.httpClient.put(API_URL + `/${id}`, order);
   }
 }
